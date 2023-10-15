@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+df = pd.read_csv("population_estimates_2.csv")
+df.head()
+	STATISTIC Label	Year	Age Group	Sex	UNIT	VALUE
+0	Population Estimates (Persons in April)	1950	0 - 14 years	Male	Thousand	434.6
+1	Population Estimates (Persons in April)	1950	0 - 14 years	Female	Thousand	416.6
+2	Population Estimates (Persons in April)	1950	15 - 24 years	Male	Thousand	234.9
+3	Population Estimates (Persons in April)	1950	15 - 24 years	Female	Thousand	217.7
+4	Population Estimates (Persons in April)	1950	25 - 44 years	Male	Thousand	393.4
+
+df.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 740 entries, 0 to 739
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   STATISTIC Label  740 non-null    object 
+ 1   Year             740 non-null    int64  
+ 2   Age Group        740 non-null    object 
+ 3   Sex              740 non-null    object 
+ 4   UNIT             740 non-null    object 
+ 5   VALUE            740 non-null    float64
+dtypes: float64(1), int64(1), object(4)
+memory usage: 34.8+ KB
+
+df["Age Group"].unique()
+array(['0 - 14 years', '15 - 24 years', '25 - 44 years', '45 - 64 years',
+       '65 years and over'], dtype=object)
